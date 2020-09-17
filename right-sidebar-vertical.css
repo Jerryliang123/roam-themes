@@ -1,0 +1,151 @@
+/* -------------------------- */
+/*       RIGHT SIDEBAR        */
+/* -------------------------- */
+
+#right-sidebar {
+  display: inline-block !important;
+  vertical-align: top;
+  overflow-y: scroll;
+  height: 100%;
+  background-color: transparent !important;
+  border: none !important;
+  /* flex-direction: row !important; */
+  padding-right: 20px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  /* max-height: 100vh; */
+  /* overflow-y: scroll; */
+}
+/* hide icon to close sidebar */
+#right-sidebar > .flex-h-box {
+  display: none;
+}
+
+/* spacing and scrolling */
+#roam-right-sidebar-content > * {
+  margin: 0px 0px 0 20px !important;
+  overflow-y: auto !important;
+  max-height: 100vh;
+  padding: 0 0px 20px 0px;
+
+  /* pesky bottom border/outline in chrome won't go away! */
+  /* this does not fix it */
+  border: none !important;
+  outline: none !important;
+}
+
+#roam-right-sidebar-content {
+  /* visibility: visible; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* allow pages to have their own height */
+  justify-content: flex-end;
+}
+
+.roam-center > div:first-child {
+  padding: 0 !important;
+}
+.roam-body-main > * {
+  display: inline-block;
+}
+
+#roam-right-sidebar-content > * {
+  display: block !important;
+  max-width: var(--article-width);
+  position: relative !important;
+}
+
+#roam-right-sidebar-content > * > .flex-h-box {
+  display: flex !important;
+  padding: 15px 10px !important;
+}
+#roam-right-sidebar-content > * > div {
+  background: var(--page-color);
+}
+#roam-right-sidebar-content > * > div:first-child {
+  border-radius: 10px 10px 0px 0px;
+}
+#roam-right-sidebar-content > * > div:first-child:last-child {
+  border-radius: 10px;
+}
+#roam-right-sidebar-content > * > div:last-child:not(:first-child) {
+  border-radius: 0px 0px 10px 10px;
+  padding-bottom: 50px !important;
+  width:var(--article-width);
+}
+#roam-right-sidebar-content > div > div:not(.flex-h-box) {
+  padding: 0px 50px 0px 40px;
+}
+#roam-right-sidebar-content > div > .flex-h-box > .bp3-button, #roam-right-sidebar-content .flex-h-box > .bp3-popover-wrapper {
+  margin: auto !important;
+  width: 20px !important;
+  text-align: center;
+}
+#roam-right-sidebar-content > div > .flex-h-box > .bp3-button:first-child, #roam-right-sidebar-content .flex-h-box > .bp3-button:last-child {
+  display: block;
+}
+
+#roam-right-sidebar-content > div .bp3-icon-plus ~ .bp3-button, #roam-right-sidebar-content > div .bp3-icon-plus ~ .bp3-popover-wrapper {
+  display: none;
+}
+
+/* position minus button */
+#roam-right-sidebar-content > div .bp3-icon-minus, #roam-right-sidebar-content > div .bp3-icon-plus {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+/* position filter button */
+#roam-right-sidebar-content > div .bp3-icon-minus ~ .bp3-popover-wrapper {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+}
+/* position references button */
+#roam-right-sidebar-content > div .bp3-icon-minus ~ button.bp3-button {
+  position: absolute;
+  top: 20px;
+  left: 80px;
+}
+/* position close button */
+#roam-right-sidebar-content > div .bp3-icon-minus ~ .bp3-button.bp3-icon-cross {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#roam-right-sidebar-content > div .bp3-icon-minus + * {
+  margin: 45px 20px 5px 50px !important;
+}
+
+#roam-right-sidebar-content > div .bp3-icon-plus ~ h1 {
+  margin-left: 50px !important;
+}
+#roam-right-sidebar-content > div .bp3-icon-plus ~ .bp3-button:last-child {margin-left: 10px !important;}
+#roam-right-sidebar-content > div .bp3-icon-plus, #roam-right-sidebar-content > div .bp3-icon-plus ~ * {
+  display: block;
+  flex: none !important;
+}
+#roam-right-sidebar-content > div .bp3-icon-plus + * {
+  white-space: nowrap;
+  writing-mode: horizontal-tb;
+  min-width: 0;
+}
+#roam-right-sidebar-content > div .bp3-icon-plus + div {
+  padding: 5px 50px;
+}
+
+
+.roam-topbar .bp3-icon-star::before {
+  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-secondary)) !important;
+}
+/* fix positioning problems with menu icon */
+.roam-topbar *[class*="icon-menu"]::before {
+  position: absolute !important;
+  top: 4px !important;
+  left: 4px !important;
+}
+.roam-topbar .bp3-icon-menu-open::before {
+  content: ""; /* prevent menu icon from changing on hover */
+}
