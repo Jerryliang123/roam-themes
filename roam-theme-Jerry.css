@@ -1,0 +1,948 @@
+/*自定义颜色*/
+:root{
+  --page-color: #ffffff;
+  --right-sidebar-color: #ffffff;
+  --page-background-color: #F3F4F5;
+  --font-style: 'Georgia','华文楷体';
+  --ref-page-background-color: #CDF7DE;
+
+  --h1-body: #56a73e;
+  --h1-color: #56a73e;
+  --h2-color: #3daabe;
+  --h3-color: #443546;
+  --text-color: #282525;
+  --line-code-area-color: #f8f8f8;
+  --box-code-area-color: #f7f7f7;
+
+  --rm-ref-page-view-title-color: #F2F2F2;
+}
+
+
+/* 看板设置 */
+.kanban-board {
+  background-color: #f2f5f9;
+  max-height: 300px;
+  overflow-x: auto;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 2px 1px 4px 0 rgba(21, 27, 38, 0.08);
+  width: 80%;
+  max-width: 1000px;
+  padding: 0px;
+}
+
+.kanban-column {
+  background-color: transparent;
+  max-width:300px;
+  border-right: 3px solid;
+  border-color: #96BEA2;
+
+}
+
+.kanban-card {
+  box-shadow: 2px 2px 4px 0 rgba(21, 27, 38, 0.08);
+  border-radius: 4px;
+  text-align: left;
+}
+
+.kanban-card:hover {
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.kanban-title {
+  text-align: center;
+  font-weight: bold;
+  background-color:#f2f5f9;
+  border-bottom: 3px solid #BE8D8D;
+  font-size: 25px !important;
+  padding: 0 0 6px 0px !important;
+}
+
+.kanban-title span{
+  color:black;
+
+}
+
+/*通过标签改变字体颜色*/
+/*Supporter colors:
+https://github.com/mrmrs/colors
+.navy { color: #001F3F; }
+.blue { color: #0074D9; }
+.aqua { color: #7FDBFF; }
+.teal { color: #39CCCC; }
+.olive { color: #3D9970; }
+.green { color: #2ECC40; }
+.lime { color: #01FF70; }
+.yellow { color: #FFDC00; }
+.orange { color: #FF851B; }
+.red { color: #FF4136; }
+.fuchsia { color: #F012BE; }
+.purple { color: #B10DC9; }
+.maroon { color: #85144B; }
+.silver { color: #DDDDDD; }
+.gray { color: #AAAAAA; }
+.black { color: #111111; }
+*/
+[data-tag^="c:"] {
+      display:none !important;
+}
+
+[data-tag^="c:"] + .roam-highlight,
+[data-tag^="c:"] + .rm-page-ref-link-color {
+    color: white !important;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
+}
+
+[data-tag="c:navy"] + .roam-highlight,
+[data-tag="c:navy"] + .rm-page-ref-link-color {
+  background-color: #001F3F !important;
+}
+
+[data-tag="c:navy"] + em,
+[data-tag="c:navy"] + strong
+{color: #001F3F; }
+
+[data-tag="c:blue"] + .roam-highlight,
+[data-tag="c:blue"] + .rm-page-ref-link-color {
+  background-color: #0074D9 !important;
+}
+
+
+[data-tag="c:blue"] + em,
+[data-tag="c:blue"] + strong {
+    color: #0074D9;
+
+}
+
+[data-tag="c:aqua"] + .roam-highlight,
+[data-tag="c:aqua"] + .rm-page-ref-link-color {
+  background-color: #7FDBFF !important;
+}
+
+[data-tag="c:aqua"] + em,
+[data-tag="c:aqua"] + strong {
+    color: #7FDBFF;
+
+}
+
+[data-tag="c:teal"] + .roam-highlight,
+[data-tag="c:teal"] + .rm-page-ref-link-color {
+  background-color: #39CCCC !important;
+}
+
+
+[data-tag="c:teal"] + em,
+[data-tag="c:teal"] + strong {
+    color: #39CCCC;
+
+}
+
+
+[data-tag="c:olive"] + .roam-highlight,
+[data-tag="c:olive"] + .rm-page-ref-link-color {
+  background-color: #3D9970 !important;
+}
+
+[data-tag="c:olive"] + em,
+[data-tag="c:olive"] + strong {
+    color: #3D9970;
+
+}
+
+[data-tag="c:green"] + .roam-highlight,
+[data-tag="c:green"] + .rm-page-ref-link-color {
+  background-color: #2ECC40 !important;
+}
+
+[data-tag="c:green"] + em,
+[data-tag="c:green"] + strong {
+    color: #2ECC40;
+
+}
+
+
+[data-tag="c:lime"] + .roam-highlight,
+[data-tag="c:lime"] + .rm-page-ref-link-color {
+
+  background-color: #01FF70 !important;
+
+}
+
+[data-tag="c:lime"] + em,
+[data-tag="c:lime"] + strong {
+    color: #01FF70;
+
+}
+
+[data-tag="c:yellow"] + .roam-highlight,
+[data-tag="c:yellow"] + .rm-page-ref-link-color {
+
+  background-color: #FFDC00 !important;
+
+}
+
+[data-tag="c:yellow"] + em,
+[data-tag="c:yellow"] + strong {
+    color: #FFDC00;
+
+}
+
+[data-tag="c:orange"] + .roam-highlight,
+[data-tag="c:orange"] + .rm-page-ref-link-color {
+
+  background-color: #FF851B !important;
+
+}
+
+[data-tag="c:orange"] + em,
+[data-tag="c:orange"] + strong {
+    color: #FF851B;
+
+}
+
+
+[data-tag="c:red"] + .roam-highlight,
+[data-tag="c:red"] + .rm-page-ref-link-color {
+
+  background-color: #FF4136 !important;
+
+}
+
+[data-tag="c:red"] + em,
+[data-tag="c:red"] + strong {
+    color: #FF4136;
+
+}
+
+[data-tag="c:fuchsia"] + .roam-highlight,
+[data-tag="c:fuchsia"] + .rm-page-ref-link-color {
+
+  background-color: #F012BE !important;
+
+}
+
+[data-tag="c:fuchsia"] + em,
+[data-tag="c:fuchsia"] + strong {
+    color: #F012BE;
+
+}
+
+[data-tag="c:purple"] + .roam-highlight,
+[data-tag="c:purple"] + .rm-page-ref-link-color {
+
+  background-color: #B10DC9 !important;
+
+}
+
+[data-tag="c:purple"] + em,
+[data-tag="c:purple"] + strong {
+
+    color: #B10DC9;
+}
+
+[data-tag="c:maroon"] + .roam-highlight,
+[data-tag="c:maroon"] + .rm-page-ref-link-color {
+
+  background-color: #85144B !important;
+
+}
+
+[data-tag="c:maroon"] + em,
+[data-tag="c:maroon"] + strong {
+    color: #85144B;
+
+}
+
+[data-tag="c:silver"] + .roam-highlight,
+[data-tag="c:silver"] + .rm-page-ref-link-color {
+
+  background-color: #DDDDDD !important;
+
+}
+
+[data-tag="c:silver"] + em,
+[data-tag="c:silver"] + strong {
+    color: #DDDDDD;
+
+}
+
+[data-tag="c:gray"] + .roam-highlight,
+[data-tag="c:gray"] + .rm-page-ref-link-color {
+
+  background-color: #AAAAAA !important;
+
+}
+
+[data-tag="c:gray"] + em,
+[data-tag="c:gray"] + strong {
+    color: #AAAAAA;
+
+}
+
+[data-tag="c:black"] + .roam-highlight,
+[data-tag="c:black"] + .rm-page-ref-link-color {
+
+  background-color: #111111 !important;
+
+}
+
+[data-tag="c:black"] + em,
+[data-tag="c:black"] + strong {
+    color: #111111;
+
+}
+
+/* 表格设置 */
+
+tbody td{
+  text-align:center;
+  font-size: 18px !important;
+}
+
+thead th{
+  text-align:center;
+  font-size: 24px !important;
+}
+thead{
+  background-color: #D9D8D8;
+}
+
+/*query设置*/
+/*query*/
+.rm-query-title {
+  display: none;
+}
+.rm-query {
+  border: 0.5px solid #F6F6F6;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-radius: 10px;
+  background-color: var(--right-sidebar-color);
+  box-shadow: 4px 3px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+/*linked reference*/
+.rm-reference-item {
+    background-color: rgba(52,143,135,0) !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 10px !important;
+}
+
+.rm-ref-page-view {
+  background-color: var(--ref-page-background-color);
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  margin-right:10px;
+}
+.rm-ref-page-view:hover {
+  box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.rm-ref-page-view-title a span{
+  font-size:24px !important;
+  background: var(--rm-ref-page-view-title-color);
+  border-radius: 3px;
+  box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.rm-ref-page-view-title a span:hover{
+  text-decoration: none !important;
+  border-bottom: 2px solid #71BE8E;
+}
+
+.rm-ref-page-view-title{
+  margin-top: 4px !important;
+  margin-left: 6px !important;
+}
+
+/*标签的基础样式*/
+/* Tag Styles */
+.rm-page-ref-tag {
+    color: #F93939 !important;
+    /*background: linear-gradient(90deg, rgb(126,190,224) 20%, rgb(145,239,173));
+    */background-color: #F9EBEBE0;
+    border-radius: 3px;
+    padding: 0px 8px 3px 4px;
+    font-weight:bold;
+    /*box-shadow: 2px 2px 4px 2px rgb(0,0,0,0.1);
+*/
+}
+.rm-page-ref-tag:hover {
+    color: #202b33 !important;
+    background-color: #b3d7ff;
+    text-decoration: none;
+}
+
+/*特定标签颜色设置*/
+span.rm-page-ref[data-tag*="电影"]{
+  color: #F9F8F2 !important;
+    background: #E0A909 !important;
+    padding: 3px 7px;
+    line-height: 2em;
+    font-weight: 600;
+}
+
+span.rm-page-ref[data-tag*="Python"]{
+  color: #F9F8F2 !important;
+    background: #90C308 !important;
+    padding: 3px 7px;
+    line-height: 2em;
+    font-weight: 600;
+}
+
+span.rm-page-ref[data-tag*="roamresearch"]{
+  color: #F9F8F2 !important;
+    background: #08C310 !important;
+    padding: 3px 7px;
+    line-height: 2em;
+    font-weight: 600;
+}
+
+span.rm-page-ref[data-tag*="books"]{
+  color: #F9F8F2 !important;
+    background: #088BC3 !important;
+    padding: 3px 7px;
+    line-height: 2em;
+    font-weight: 600;
+}
+
+span.rm-page-ref[data-tag*="已分类|Notes"]{
+  color: #F9F8F2 !important;
+    background: #C30877 !important;
+    padding: 3px 7px;
+    line-height: 2em;
+    font-weight: 600;
+}
+
+span.rm-page-ref[data-tag*="已分类|TODO"]{
+  color: #F9F8F2 !important;
+    background: #C38B08 !important;
+    padding: 3px 7px;
+    line-height: 2em;
+    font-weight: 600;
+}
+
+
+/*链接的样式设置*/
+.rm-page-ref-link-color {
+    color: #12A9A9;
+    text-decoration: none;
+    border-bottom: 2px solid;
+    border-color: #74F42B;
+}
+.rm-page-ref-link-color:hover{
+  text-decoration:none;
+  background-color:#95C7FF;
+  border-radius: 2px;
+  box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* 随时调整右边栏宽度*/
+.roam-center{
+  flex-basis:auto!important;
+  resize:horizontal!important;
+  overflow:auto !important;
+}
+
+.roam-block-container{
+  max-width: 1500px !important;
+}
+
+/*调整block样式*/
+:root{
+  --border-color: #E6CECE;
+}
+.rm-block-text{
+  max-width: 1000px !important;
+}
+.rm-block-text:focus{
+  color: #000000 !important;
+  max-width: 1000px !important;
+  /*
+  font-size: 22px !important;
+  /*background: #B3B18C;*/
+  /*background: linear-gradient(to bottom, rgba(242,240,213,1) 0%, rgba(232,230,202,1) 9%, rgba(212,210,169,1) 27%, rgba(212,210,169,1) 52%, rgba(212,210,169,1) 76%, rgba(232,230,202,1) 93%, rgba(242,240,213,1) 100%);
+  /*border: 4px solid var(--border-color);*/
+  /*border-radius: 6px;
+
+  box-shadow: 8px 8px 10px 1px rgb(0,0,0,0.5);*/
+  }
+
+
+/*主页面的样式设置*/
+.roam-article > div {
+    background: var(--page-color);
+    /* position: relative; */
+    border-radius: 10px;
+}
+/* 调整article的位置，以及显示*/
+.roam-article > div:first-child, #roam-right-sidebar-content > * > * {
+    box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.15);
+}
+
+.roam-article > div {
+    padding: 10px 15px 10px 15px;
+}
+
+.roam-article{
+  padding: 0px 5px 5px 5px !important;
+}
+
+div.roam-center{
+  padding: 0px 5px 0px 10px;
+  margin: 0px 0px 0px 0px;
+}
+
+.roam-center > div{
+  padding: 0 0px 0 0 !important;
+}
+
+/* daily Notes页面 */
+#rm-log-container {
+  padding: 0 0 0 0 !important;
+}
+
+/* 右边栏调整 */
+#roam-right-sidebar-content  > * {
+  margin: 0px 0px 0px 0px !important;
+  padding: 0px 20px 0px 5px;  /*右边的宽度*/
+  border-radius:30px !important;
+/*  margin-top: 0px !important;
+  z-index:99999999 !important;*/
+}
+#right-sidebar > div.flex-h-box{
+  display: none !important;
+}
+
+
+.roam-sidebar-container .roam-sidebar-content{
+  background-color: var(--right-sidebar-color) !important;
+}
+
+.sidebar-content > div{
+  background-color: var(--right-sidebar-color);
+  border-radius: 10px;
+  margin: 0px 0px 15px 0px;
+}
+
+.sidebar-content > div > div {
+  background-color: var(--right-sidebar-color);
+  border-bottom:0px !important;
+  margin: 0px 0px 15px 0px;
+  border-bottom: 1px solid var(--right-sidebar-color);
+}
+
+/*左边栏设置*/
+
+#right-sidebar > div {
+    background-image: url("https://i.loli.net/2020/10/02/eJwpnfcgQ54DPLq.jpg");
+    border-left: 0px solid #e5e5e5;
+}
+
+.roam-body .roam-app .roam-sidebar-container {
+    background-color: #faffff;
+    border-right: 1px #e5e5e5 solid;
+}
+.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page,
+.roam-body .roam-app .roam-sidebar-container > * {
+    background-color: var(--right-sidebar-color);
+    color: #121212;
+    box-shadow: none;
+}
+
+.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page:hover,
+.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button:hover {
+    background-color: #93ECEC;
+    color: #048a8a;
+    border-radius: 6px;
+    margin: 0px 5px 0px 5px;
+}
+
+
+
+/*block reference样式*/
+ .rm-block-ref{
+  border-bottom: 2px solid #c4edf1 !important;
+}
+.rm-block-ref:hover{
+  background-color: #c4edf1;
+  border-bottom: 2px solid #E74343 !important;
+  border-radius: 2px;
+}
+
+.rm-mentions{
+  margin: 0px 0px 0px 10px;
+}
+
+
+
+
+
+
+/*主体背景色*/
+.roam-body-main{
+  /*background-color: var(--page-background-color);*/
+  background-image: url("https://i.loli.net/2020/10/02/eJwpnfcgQ54DPLq.jpg")
+}
+
+#right-sidebar > .flex-h-box{
+  /*background-color: var(--page-background-color) !important;*/
+  background-image: url("https://i.loli.net/2020/10/02/eJwpnfcgQ54DPLq.jpg")
+}
+
+.roam-topbar{
+  background-image: url("https://i.loli.net/2020/10/02/eJwpnfcgQ54DPLq.jpg")
+  /*background-color: var(--page-background-color);*/
+  /*border-bottom: 4px solid #605B5B;*/
+}
+
+/*字体设置*/
+.roam-body .roam-app h1 {
+  color: var(--h1-body);
+  font-family: var(--font-style);
+  font-size: 24px
+}
+
+h1 textarea,
+.rm-level1 textarea,
+.rm-level1 div {
+  font-family: var(--font-style);
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--h1-color);
+  padding: 0 0 3px 0;
+  margin-bottom:-10px;
+  /*
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-style:dashed;
+  */
+}
+
+h1, h1 div{
+  font-family: var(--font-style);
+  font-size: 30px;
+  color: var(--h1-color);
+}
+
+h2 textarea,
+.rm-level2 textarea,
+.rm-level2 div {
+  font-family:var(--font-style);
+  font-size: 26px;
+  font-weight:bold;
+  color: var(--h2-color);
+  padding: 0 0 3px 0;
+  margin-bottom:0px;
+    }
+h2,h2 div {
+  font-family: var(--font-style);
+  font-size: 26px;
+  color: var(--h2-color);
+}
+
+h2.level2 span{
+  font-family: var(--font-style); /*level2的heading字体*/
+}
+
+h3,
+h3 div,
+h3 textarea,
+.rm-level3 textarea,
+.rm-level3 div {
+  font-family: var(--font-style);
+  font-size: 20px;
+  color: var(--h3-color);
+  padding: 0 0 3px 0;
+  margin-bottom:-10px;
+  font-weight:bold;
+ }
+
+div,
+textarea {
+  font-family:var(--font-style);
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+.starred-pages .page{
+  font-size: 16px !important;
+}
+
+.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button {
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+/*字体mark up*/
+.roam-highlight {
+    background-color: #FFEF1F;
+    border-radius: 4px;
+    margin: 0 2px 0 2px;
+}
+strong {
+    color: #033F4F;
+}
+
+em {
+    color: #0a4747;
+}
+
+/*.flex-v-box strong{
+  text-decoration:underline wavy;
+  text-decoration-color: rgb(46,20,90);
+}*/
+
+.rm-reference-container .flex-h-box strong{
+  text-decoration: none !important;
+}
+
+/*代码背景*/
+.CodeMirror{
+  border-radius: 4px !important;
+  /*box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.1);
+  */background: var(--box-code-area-color) !important;
+}
+
+code{
+  background: var(--line-code-area-color);
+  /*box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.1);*/
+  border-radius: 3px;
+  border: 1px solid #F4F1F1 !important;
+}
+
+/*TODO*/
+.checkmark {
+    background: #FFFFFF;
+    border-color: #866B6B;
+}
+
+/*右边栏标题颜色*/
+a {
+    color: #3073A7;
+}
+
+a:hover {
+    color: #148282;
+    text-decoration: none;
+    border-radius: 4px;
+    background-color: #FFB9B9;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+/*emoji*/
+.rm-emoji{
+  margin:0px 2px 0px 4px !important;
+  padding: 0 0 5px 0 !important;
+}
+.rm-emoji-button{
+  border: none !important;
+  background: var(--page-color) !important;
+}
+
+/*Mermaid*/
+/*
+Author: @CatoMinor3
+Version: 1
+Date: July 1st
+Paypal support:  https://www.paypal.me/catominor3
+What it does: Custom CSS colors for Mermaid in Roam.
+How to use it?
+1) Put this code into roam/css
+2) Simply assign class to the item under {{mermaid}}:
+class IDOFTHEITEM merCOLOR;
+Example:
+- graph TD;
+    - colors -->A[Navy];
+    - colors -->B[Blue];
+
+    - class A merNavy;
+    - class B merBlue;
+*/
+
+.merNavy > circle,
+.merNavy > rect,
+.merNavy > polygon {
+  fill:#001F3F !important;
+  stroke-width: 0px !important;
+}
+
+
+.merBlue > circle,
+.merBlue > rect,
+.merBlue > polygon {
+   fill: #0074D9 !important;
+   stroke-width: 0px !important;
+
+}
+
+.merAqua > circle,
+.merAqua > rect,
+.merAqua > polygon {
+  fill:#7FDBFF !important;
+  stroke-width: 0px !important;
+}
+
+.merTeal > circle,
+.merTeal > rect,
+.merTeal > polygon {
+  fill:#39CCCC !important;
+  stroke-width: 0px !important;
+}
+
+
+
+
+.merOlive > circle,
+.merOlive > rect,
+.merOlive > polygon {
+   fill: #3D9970 !important;
+   stroke-width: 0px !important;
+
+}
+
+.merGreen > circle,
+.merGreen > rect,
+.merGreen > polygon {
+   fill: #2ECC40 !important;
+   stroke-width: 0px !important;
+
+}
+
+.merLime > circle,
+.merLime > rect,
+.merLime > polygon {
+   fill: #01FF70 !important;
+   stroke-width: 0px !important;
+
+}
+
+.merYellow > circle,
+.merYellow > rect,
+.merYellow > polygon {
+   fill: #FFDC00 !important;
+   stroke-width: 0px !important;
+
+}
+
+.merOrange > circle,
+.merOrange > rect,
+.merOrange > polygon {
+   fill: #FF851B !important;
+   stroke-width: 0px !important;
+
+}
+
+.merRed > circle,
+.merRed > rect,
+.merRed > polygon {
+   fill: #FF4136 !important;
+   stroke-width: 0px !important;
+
+}
+
+.merFuchsia > circle,
+.merFuchsia  > rect,
+.merFuchsia > polygon {
+   fill: #F012BE !important;
+   stroke-width: 0px !important;
+
+}
+
+.merPurple > circle,
+.merPurple  > rect,
+.merPurple > polygon {
+   fill: #B10DC9 !important;
+   stroke-width: 0px !important;
+
+}
+
+.merMaroon > circle,
+.merMaroon  > rect,
+.merMaroon > polygon {
+   fill: #85144B !important;
+   stroke-width: 0px !important;
+
+}
+
+.merSilver > circle,
+.merSilver  > rect,
+.merSilver > polygon {
+   fill: #DDDDDD !important;
+   stroke-width: 0px !important;
+
+}
+
+.merGrey > circle,
+.merGrey  > rect,
+.merGrey > polygon {
+   fill: #AAAAAA !important;
+   stroke-width: 0px !important;
+
+}
+
+.merBlack > circle,
+.merBlack  > rect,
+.merBlack > polygon {
+   fill: #111111 !important;
+   stroke-width: 0px !important;
+
+}
+
+.merWhite > circle,
+.merWhite  > rect,
+.merWhite > polygon {
+   fill: white !important;
+
+  stroke: black !important;
+
+}
+
+.merNone > circle,
+.merNone  > rect,
+.merNone > polygon {
+   stroke-width: 0px !important;
+  fill: none !important;
+
+}
+
+
+
+
+.merNavy > .label,
+.merBlue > .label,
+.merAqua > .label,
+.merTeal > .label,
+.merGreen > .label,
+.merLime > .label,
+.merYellow > .label,
+.merOrange > .label,
+.merRed > .label,
+.merFuchsia > .label,
+.merPurple > .label,
+.merMaroon > .label,
+.merSilver > .label,
+.merGrey > .label,
+.merBlack > .label,
+.merOlive > .label {
+  color:white !important;
+  font-weight: bold;
+
+}
+
+/*block左边的垂直线*/
+.flex-v-box .roam-block-container{
+  border-left: 1.5px solid #bfc8d0 !important;
+}
+
+
+
